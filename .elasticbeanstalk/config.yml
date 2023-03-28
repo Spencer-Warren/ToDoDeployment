@@ -1,0 +1,22 @@
+branch-defaults:
+  default:
+    environment: Gensparkweek11-env
+    group_suffix: null
+  main:
+    environment: Gensparkweek11-env
+deploy:
+  artifact: BackEnd\target\ToDoList-0.0.1-SNAPSHOT.jar
+global:
+  application_name: GensparkWeek11
+  branch: null
+  default_ec2_keyname: null
+  default_platform: Corretto 17 running on 64bit Amazon Linux 2
+  default_region: us-east-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: null
+  repository: null
+  sc: null
+  workspace_type: Application
