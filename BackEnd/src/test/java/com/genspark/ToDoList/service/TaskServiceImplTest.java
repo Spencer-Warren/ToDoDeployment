@@ -2,6 +2,7 @@ package com.genspark.ToDoList.service;
 
 import com.genspark.ToDoList.dao.TaskDao;
 import com.genspark.ToDoList.entity.Task;
+import com.genspark.ToDoList.entity.User;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -22,7 +23,7 @@ class TaskServiceImplTest {
 
     @Test
     void saveTaskTest() {
-        Task task = new Task(1, "task", "description", "date", "status", 1);
+        Task task = new Task(1, "task", "description", "date", "status", new User(1, "username", "password", "firstname", "lastname"));
         when(taskDao.save(task)).thenReturn(task);
 
         Task actual = service.saveTask(1, task);

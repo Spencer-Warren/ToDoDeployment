@@ -42,7 +42,7 @@ public class ToDoControllerTest {
     }
     @Test
     public void getTasksTest () throws Exception {
-        given(toDoController.getTasks(1)).willReturn(List.of(new Task(1, "task1", "description1", "Status", "2021-01-01", 1)));
+        given(toDoController.getTasks(1)).willReturn(List.of(new Task(1, "task1", "description1", "Status", "2021-01-01", new User(1, "username", "password", "firstname", "lastname"))));
         this.mockMvc.perform(get("/api/1/tasks"))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -51,7 +51,7 @@ public class ToDoControllerTest {
 
     @Test
     public void getTaskTest () throws Exception {
-        given(toDoController.getTask(1, 1)).willReturn(new Task(1, "task1", "description1", "Status", "2021-01-01", 1));
+        given(toDoController.getTask(1, 1)).willReturn(new Task(1, "task1", "description1", "Status", "2021-01-01", new User(1, "username", "password", "firstname", "lastname")));
         this.mockMvc.perform(get("/api/1/tasks/1"))
                 .andDo(print())
                 .andExpect(status().isOk())

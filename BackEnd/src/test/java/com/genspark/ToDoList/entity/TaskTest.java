@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class TaskTest {
 
     private Task taskFactory() {
-        return new Task(1, "title", "description", "status", "2021-01-01", 1);
+        return new Task(1, "title", "description", "status", "2021-01-01", new User(1, "username", "password", "firstname", "lastname"));
     }
 
     @Test
@@ -18,7 +18,7 @@ class TaskTest {
         assertEquals("", t.getDescription());
         assertEquals("", t.getStatus());
         assertEquals("", t.getDueDate());
-        assertEquals(0, t.getUserid());
+        assertNull(t.getUser());
     }
 
     @Test
@@ -52,8 +52,8 @@ class TaskTest {
     @Test
     void setUserid() {
         Task t = taskFactory();
-        t.setUserid(2);
-        assertEquals(2, t.getUserid());
+        t.getUser().setUserid(2);
+        assertEquals(2, t.getUser().getUserid());
     }
 
     @Test
