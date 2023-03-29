@@ -1,9 +1,8 @@
 package com.genspark.ToDoList.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class User {
@@ -15,6 +14,10 @@ public class User {
     private String firstname;
     private String lastname;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.MERGE, orphanRemoval = true)
+    @OrderBy("dueDate ASC")
+    private List<Task> tasks;
+
     public User() {
     }
 
@@ -25,6 +28,8 @@ public class User {
         this.firstname = firstname;
         this.lastname = lastname;
     }
+
+
 
     public int getUserid() {
         return userid;

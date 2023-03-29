@@ -36,3 +36,11 @@ export class responseUser {
     this.userid = uid;
   }
 }
+
+export class uidUser {
+  userid: number;
+
+  constructor(uid: number) {
+    this.userid = uid;
+  }
+}

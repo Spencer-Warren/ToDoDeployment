@@ -22,3 +22,13 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+BackEnd/src/main/resources/public/3rdpartylicenses.txt
+BackEnd/src/main/resources/public/assets/back.jpg
+BackEnd/src/main/resources/public/back.0c8cb296cd18ecb8.jpg
+BackEnd/src/main/resources/public/favicon.ico
+BackEnd/src/main/resources/public/index.html
+BackEnd/src/main/resources/public/main.1d5ab5a4e89372f4.js
+BackEnd/src/main/resources/public/polyfills.4db10468e40fa220.js
+BackEnd/src/main/resources/public/runtime.ec0e1ae0fc9ba434.js
+BackEnd/src/main/resources/public/scripts.c7437e3494962292.js
+BackEnd/src/main/resources/public/styles.72d8f0d2b1376b7e.css

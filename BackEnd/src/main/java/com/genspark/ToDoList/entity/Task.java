@@ -1,10 +1,8 @@
 package com.genspark.ToDoList.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Task {
@@ -16,7 +14,10 @@ public class Task {
     private String status;
     @JsonProperty("dueDate")
     private String dueDate;
-    private int userid;
+
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "userid")
+    private User user;
 
     public Task() {
         id = 0;
@@ -24,16 +25,16 @@ public class Task {
         description = "";
         status = "";
         dueDate = "";
-        userid = 0;
+        user = null;
     }
 
-    public Task(int id, String title, String description, String status, String dueDate, int userid) {
+    public Task(int id, String title, String description, String status, String dueDate, User user) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.status = status;
         this.dueDate = dueDate;
-        this.userid = userid;
+        this.user = user;
     }
 
     public int getId() {
@@ -68,12 +69,12 @@ public class Task {
         this.dueDate = dueDate;
     }
 
-    public int getUserid() {
-        return userid;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserid(int userid) {
-        this.userid = userid;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getTitle() {

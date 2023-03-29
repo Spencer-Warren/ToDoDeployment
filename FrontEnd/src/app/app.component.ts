@@ -33,4 +33,8 @@ export class AppComponent {
   get uid() {
     return Number.parseInt(sessionStorage.getItem('userid') || '0');
   }
+
+  get user() {
+    return new responseUser(sessionStorage.getItem('firstname') || '', sessionStorage.getItem('lastname') || '', sessionStorage.getItem('username') || '', sessionStorage.getItem('userid') || '');
+  }
 }

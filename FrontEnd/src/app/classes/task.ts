@@ -1,3 +1,5 @@
+import {responseUser, uidUser } from './user';
+
 export class Task {
     id: number = 0;
     title: string = '';
@@ -19,13 +21,13 @@ export class TaskNoId {
     description: string = '';
     status: string = '';
     dueDate: string = '';
-    userid: number = 0;
+    user: responseUser;
 
-    constructor(title: string, description: string, status: string, dueDate: string, userid: number) {
+    constructor(title: string, description: string, status: string, dueDate: string, user: responseUser) {
         this.title = title;
         this.description = description;
         this.status = status;
         this.dueDate = dueDate;
-        this.userid = userid;
+        this.user = user;
     }
 }

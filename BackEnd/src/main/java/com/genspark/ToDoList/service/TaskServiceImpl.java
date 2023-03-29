@@ -16,7 +16,7 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public List<Task> findAll(int userid) {
-       return this.taskDao.findAll().stream().filter(task -> task.getUserid() == userid).toList();
+       return this.taskDao.findAll().stream().filter(task -> task.getUser().getUserid() == userid).toList();
     }
 
     @Override
@@ -29,21 +29,18 @@ public class TaskServiceImpl implements TaskService {
     public Task findByTaskid(int taskid) {
         return this.taskDao.findById(taskid).orElse(null);
     }
-//
+
     @Override
     public void updateTask(int userId, Task task) {
-        System.out.println("Update");
-        System.out.println(task);
         for (Task t : this.findAll(userId)) {
             if (t.getId() == task.getId()) {
-                System.out.println("Found");
                 Task newTask = new Task();
                 newTask.setId(t.getId());
                 newTask.setDescription(task.getDescription());
                 newTask.setDueDate(task.getDueDate());
                 newTask.setStatus(task.getStatus());
                 newTask.setTitle(task.getTitle());
-                newTask.setUserid(userId);
+                newTask.setUser(t.getUser());
                 this.taskDao.save(newTask);
             }
         }
