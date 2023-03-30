@@ -5,7 +5,7 @@ branch-defaults:
   main:
     environment: Gensparkweek11-env
 deploy:
-  artifact: BackEnd\target\ToDoList-0.0.1-SNAPSHOT.jar
+  artifact: BackEnd/target/ToDoList-0.0.1-SNAPSHOT.jar
 global:
   application_name: GensparkWeek11
   branch: null
