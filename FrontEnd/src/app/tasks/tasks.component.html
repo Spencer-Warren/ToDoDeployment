@@ -1,16 +1,16 @@
 <div class="card p-3 m-5">
     <h2>Tasks</h2>
-    <table class="table table-light">
+    <table class="table table-light nocursor">
         <thead>
             <tr>
-                <th scope="col">Title</th>
-                <th scope="col">Description</th>
-                <th scope="col">Status</th>
-                <th scope="col" colspan="2">Due Date</th>
+                <th scope="col" (click)="sort('title')">Title<img src="../assets/small.png"></th>
+                <th scope="col" (click)="sort('description')">Description<img src="../assets/small.png"></th>
+                <th scope="col" (click)="sort('status')">Status<img src="../assets/small.png"></th>
+                <th scope="col" (click)="sort('date')" colspan="2">Due Date<img src="../assets/small.png"></th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let task of tasks">
+            <tr *ngFor="let task of tasksList | async">
                 <td>{{task.title}}</td>
                 <td>{{task.description}}</td>
                 <td>{{task.status}}</td>

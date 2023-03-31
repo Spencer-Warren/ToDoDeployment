@@ -1,0 +1,9 @@
+.sort{
+    width: 10px;
+    height: 10px;
+
+}
+
+tr>th>img {
+    margin-left: 5px;
+}
